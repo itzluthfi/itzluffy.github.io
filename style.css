@@ -1,0 +1,12 @@
+.jumbotron {
+  padding-top: 6rem;
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+#gallery {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+section {
+  padding-top: 5rem;
+}
