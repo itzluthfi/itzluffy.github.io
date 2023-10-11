@@ -260,7 +260,7 @@
               class="card"
               data-aos="flip-left"
               data-aos-duration="2000"
-              data-aos-delay="800"
+              data-aos-delay="600"
             >
               <img src="img/g3.jpg" class="card-img-top" alt="picture 3" />
               <div class="card-body">
@@ -276,7 +276,7 @@
               class="card"
               data-aos="flip-left"
               data-aos-duration="2000"
-              data-aos-delay="1200"
+              data-aos-delay="800"
             >
               <img src="img/g4.jpg" class="card-img-top" alt="picture 3" />
               <div class="card-body">
@@ -292,7 +292,7 @@
               class="card"
               data-aos="flip-left"
               data-aos-duration="2000"
-              data-aos-delay="1600"
+              data-aos-delay="1000"
             >
               <img src="img/g5.jpg" class="card-img-top" alt="picture 3" />
               <div class="card-body">
@@ -330,7 +330,19 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form>
+            <div
+              class="alert alert-warning alert-dismissible fade show d-none form-alert"
+              role="alert"
+            >
+              <strong>Berhasil Terkirim!</strong> pesan anda telah kami terima.
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form name="luthfi-contact-form">
               <div
                 class="mb-3"
                 data-aos="fade-right"
@@ -343,6 +355,7 @@
                   class="form-control"
                   id="name"
                   aria-describedby="name"
+                  name="nama"
                 />
               </div>
               <div
@@ -357,6 +370,7 @@
                   class="form-control"
                   id="email"
                   aria-describedby="email"
+                  name="email"
                 />
               </div>
               <div
@@ -366,16 +380,33 @@
                 data-aos-delay="600"
               >
                 <label for="pesan" class="form-label">Pesan :</label>
-                <textarea class="form-control" id="pesan" rows="3"></textarea>
+                <textarea
+                  class="form-control"
+                  id="pesan"
+                  rows="3"
+                  name="pesan"
+                ></textarea>
               </div>
               <button
                 type="submit"
-                class="btn btn-primary"
+                class="btn btn-primary btn-kirim"
                 data-aos="fade-right"
                 data-aos-duration="2000"
                 data-aos-delay="800"
               >
                 Kirim!
+              </button>
+              <button
+                class="btn btn-primary btn-loading d-none"
+                type="button"
+                disabled
+              >
+                <span
+                  class="spinner-grow spinner-grow-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Loading...
               </button>
             </form>
           </div>
@@ -518,6 +549,36 @@
             });
         });
       })();
+    </script>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbw_-u6_DpLh4pRH-OV8K5V2up1jSBkfmixU7aApa3WhW41W60S6Yy5DuhMwdQSNVWPhDQ/exec";
+      const form = document.forms["luthfi-contact-form"];
+      const btnKirim = document.querySelector(".btn-kirim");
+      const btnLoading = document.querySelector(".btn-loading");
+      const formAlert = document.querySelector(".form-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // ketika tombol di klik
+        // hilangkan tombol kirim,munculkan tombol loading
+        btnKirim.classList.toggle("d-none");
+        btnLoading.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            // ketika tombol di klik
+            // hilangkan tombol loading,munculkan tombol kirim
+
+            btnKirim.classList.toggle("d-none");
+            btnLoading.classList.toggle("d-none");
+            // tampilkan alert
+            formAlert.classList.toggle("d-none");
+            // refresh form
+            form.reset();
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
     </script>
   </body>
 </html>
