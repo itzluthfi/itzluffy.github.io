@@ -305,6 +305,41 @@
           </div>
         </div>
       </div>
+      <!-- my product -->
+      <section id="my-product">
+        <div class="container">
+          <div class="row text-center mb-4">
+            <div class="col" data-aos="zoom-in-down" data-aos-duration="2000">
+              <h2>3D Product</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="coffe-box bg-primary rounded">
+                <h4 class="coffe-name text-center">-expresso-</h4>
+                <img src="img/kopi.1.png" alt="expresso" class="coffe-img" />
+                <a href="#" class="btn btn-light coffe-button">Show Details</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="coffe-box bg-primary rounded">
+                <h4 class="coffe-name text-center">-white coffe-</h4>
+                <img src="img/kopi.2.png" alt="expresso" class="coffe-img" />
+                <a href="#" class="btn btn-light coffe-button">Show Details</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="coffe-box bg-primary rounded">
+                <h4 class="coffe-name text-center">-kapal kobong-</h4>
+                <img src="img/kopi.3.png" alt="expresso" class="coffe-img" />
+                <a href="#" class="btn btn-light coffe-button">Show Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- akhir my product -->
+
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#ffffff"
@@ -579,6 +614,17 @@
           })
           .catch((error) => console.error("Error!", error.message));
       });
+    </script>
+    <script type="text/javascript" src="tilt.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelectorAll(".coffe-box"), {
+        max: 30,
+        speed: 600,
+        glare: true,
+      });
+
+      //It also supports NodeList
+      VanillaTilt.init(document.querySelectorAll(".your-element"));
     </script>
   </body>
 </html>
