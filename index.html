@@ -101,19 +101,6 @@
                     Dark
                   </button>
                 </li>
-                <li>
-                  <button
-                    class="dropdown-item d-flex align-items-center"
-                    type="button"
-                    data-bs-theme-value="auto"
-                  >
-                    <i
-                      class="bi bi-circle-half me-2 opacity-50"
-                      data-theme-icon="bi-circle-half"
-                    ></i>
-                    Auto
-                  </button>
-                </li>
               </ul>
             </li>
           </ul>
@@ -126,17 +113,16 @@
     <section class="jumbotron text-center">
       <img
         data-aos="flip-left"
-        data-aos-duration="2000"
-        data-aos-delay="160"
+        data-aos-duration="2500"
         src="img/logo.jpg"
         alt="luthfi shidqi habibulloh"
         style="width: 200px"
-        class="rounded-circle img-thumbnail"
+        class="rounded-circle img-thumbnail logo-foto"
       />
       <h1
         data-aos="fade-zoom-in"
         data-aos-duration="2000"
-        data-aos-delay="1200"
+        data-aos-delay="1300"
       >
         LUTHFI SHIDQI HABIBULLOH
       </h1>
@@ -314,21 +300,35 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div
+              class="col-md-6 col-lg-4 mb-3"
+              data-aos="zoom-in-down"
+              data-aos-duration="2000"
+            >
               <div class="coffe-box bg-primary rounded">
                 <h4 class="coffe-name text-center">-expresso-</h4>
                 <img src="img/kopi.1.png" alt="expresso" class="coffe-img" />
                 <a href="#" class="btn btn-light coffe-button">Show Details</a>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div
+              class="col-md-6 col-lg-4 mb-3"
+              data-aos="zoom-in-down"
+              data-aos-duration="2000"
+              data-aos-delay="300"
+            >
               <div class="coffe-box bg-primary rounded">
                 <h4 class="coffe-name text-center">-white coffe-</h4>
-                <img src="img/kopi.2.png" alt="expresso" class="coffe-img" />
+                <img src="img/kopi6.png" alt="expresso" class="coffe-img" />
                 <a href="#" class="btn btn-light coffe-button">Show Details</a>
               </div>
             </div>
-            <div class="col-md-6 col-lg-4 mb-3">
+            <div
+              class="col-md-6 col-lg-4 mb-3"
+              data-aos="zoom-in-down"
+              data-aos-duration="2000"
+              data-aos-delay="600"
+            >
               <div class="coffe-box bg-primary rounded">
                 <h4 class="coffe-name text-center">-kapal kobong-</h4>
                 <img src="img/kopi.3.png" alt="expresso" class="coffe-img" />
@@ -484,7 +484,9 @@
     ></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init();
+      AOS.init({
+        once: true,
+      });
     </script>
     <script>
       /*!

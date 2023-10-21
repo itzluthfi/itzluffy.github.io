@@ -81,7 +81,7 @@ section {
 }
 
 .coffe-box:hover .coffe-img {
-  transform: translate3d(-50%, -50%, 90px) rotate(7deg) scale(1.2);
+  transform: translate3d(-50%, -50%, 100px) rotate(7deg) scale(1.2);
 }
 
 .coffe-button {
